@@ -75,9 +75,9 @@ cache errors.
             session.beginTransaction();
 
 
-            Subject cs = new Subject("Computer Science");
-            session.save(cs);
-            session.flush();
+            //Subject cs = new Subject("Computer Science");
+            //session.save(cs);
+            //session.flush();
             // TODO: javafx
             //Question q1 = new Question("choose 1,2,3,4", "1", "2", "3", "4", 1, cs);
             //session.save(q1);
