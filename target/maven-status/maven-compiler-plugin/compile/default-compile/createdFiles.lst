@@ -1,4 +1,12 @@
-org/example/Subject.class
+org/example/Exam.class
+org/example/Teacher.class
 org/example/Question.class
 org/example/Course.class
+org/example/Principal.class
+org/example/Exam_Question_points.class
+org/example/Answer.class
+org/example/Subject.class
+org/example/Grade.class
+org/example/ReadyExam.class
+org/example/Pupil.class
 org/example/App.class

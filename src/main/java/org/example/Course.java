@@ -17,17 +17,60 @@ public class Course {
     @ManyToMany(mappedBy = "courses")
     private List<Question> questions;
 
-    public Course(String name) {
+    @OneToMany(mappedBy="course")
+    private List<Exam> exams;
+    @ManyToOne
+    @JoinColumn(name = "subject_id", nullable = false)
+    private Subject subject_id;
+
+    public Course(String name, Subject subject) {
         this.name = name;
         this.questions = new ArrayList<Question>();
+        this.exams = new ArrayList<Exam>();
+        this.subject_id = subject;
+        subject.addCourse(this);
+    }
+
+    public List<Exam> getExams() {
+        return exams;
+    }
+
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void addQuestion(Question question){
         this.questions.add(question);
+//        question.addCourse(this);            //this is specifically commented in order not to create a circle
+    }
+
+    public void addExam(Exam exam)
+    {
+        this.exams.add(exam);
+    }
+
+    public Subject getSubject_id() {
+        return subject_id;
     }
 
     public Course()
     {
 
+    }
+
+    public List<Exam> getExam() {
+        return exams;
+    }
+
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }
